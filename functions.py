@@ -86,7 +86,7 @@ def menu_tavernier():
     print("\n\"e\" pour exit")
 
 def menu_shop():
-    print(pnj2.dialogue[0], "\n1 - Acheter un item (actuellement indisponible la crise tout ça tout ça"
+    print(pnj2.dialogue[0], "\n1 - Acheter un item (actuellement indisponible la crise tout ça tout ça)"
                             "\n2 - Vendre un item"
                             "\n3- \"e\" pour quitter Shop")
 

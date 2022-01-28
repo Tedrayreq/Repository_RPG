@@ -69,7 +69,7 @@ class Personnage:
 
 
     def Perdre_objet(self,objet):
-        self.inventaire.pop(objet)
+        self.inventaire.remove(objet)
 
 
     def Afficher_inventaire(self):

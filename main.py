@@ -21,7 +21,6 @@ heros.quetes = [quete1, quete2, quete3]
 heros.Gagner_objet(arme1)
 heros.Equiper_objet(arme1)
 heros.gold = 100
-choix = ""
 input("Appuyer sur entrer pour continuer\n")
 
 # Main
@@ -221,6 +220,56 @@ while heros.Vivant():
                     clear()
                     menu_shop()
                     choix_shop = input()
+                    
+                    # Acheter
+                    if choix_shop == "1":
+                        acheter = True
+                        while acheter:
+                            choix_shop = input("Vous savez pas lire !\n"
+                                               "Je n'ai rien a vous vendre pour l'instant...\n"
+                                               "\"e\" pour quitter\n")
+                            if choix_shop == "e":
+                                input("Vous quittez le Shop")
+                                acheter = False
+                    
+                    # Vendre
+                    elif choix_shop == "2":
+                        vendre = True
+                        while vendre:
+                            clear()
+                            if len(heros.inventaire) == 0:
+                                input("Vous n'avez rien à vendre")
+                                vendre = False
+                            else:
+                                print("Que voulez-vous vendre ?")
+                                j = 0
+                                for i in heros.inventaire:
+                                    j += 1
+                                    print(j, "-", i.nom, "prix de vente :", i.gold, "po")
+                                print("\"e\" pour quitter")
+                                select_item = input("Quel item voulez-vous vendre ?\n")
+                                if select_item == "e":
+                                    input("Vous quittez le Shop")
+                                    vendre = False
+                                while not check_int(select_item):
+                                    select_item = input("Quel item voulez-vous vendre ?\n")
+                                select_item = int(select_item)
+                                print("Vendre", heros.inventaire[select_item-1].nom, "contre", heros.inventaire[select_item-1].gold, "po ? \"y\" pour confirmer")
+                                validation = input()
+                                if validation == "y":
+                                    clear()
+                                    print("Vous gagnez", heros.inventaire[select_item-1].gold)
+                                    heros.gold += heros.inventaire[select_item-1].gold
+                                    item_vendu = heros.inventaire[select_item - 1]
+                                    heros.inventaire.remove(item_vendu)
+                                    input("Item vendu !")
+
+                                
+
+
+                    # Quitter
+                    elif choix_shop == "e":
+                        shop = False
 
             # Guilde
             elif choix_menu_ville == "3":
