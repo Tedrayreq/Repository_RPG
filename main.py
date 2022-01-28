@@ -254,7 +254,11 @@ while heros.Vivant():
                                     input("Vous quittez le Shop")
                                     vendre = False
                                 while not check_int(select_item):
-                                    select_item = input("Quel item voulez-vous vendre ?\n")
+                                    if select_item == "e":
+                                        vendre = False
+                                        break
+                                    else:
+                                        select_item = input("Quel item voulez-vous vendre ?\n")
                                 select_item = int(select_item)
                                 print("Vendre", heros.inventaire[select_item-1].nom, "contre", heros.inventaire[select_item-1].gold, "po ? \"y\" pour confirmer")
                                 validation = input()
@@ -281,7 +285,8 @@ while heros.Vivant():
                         print("Groumppf !\n")
                         input("Vous ne semblez pas encore la bienvenue ici...\n")
                         input("On vous fait comprendre qu'il faut partir...")
-                
+                        continuer = False
+
                     else:
                         clear()
                         print("Vous êtes à la guilde")
