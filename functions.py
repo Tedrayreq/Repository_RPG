@@ -79,7 +79,7 @@ def menu_ville():
     print("4 - Quitter ville")
 
 def menu_tavernier():
-    print(pnj1[0], "\n1 - J'aimerai prendre une chambre pour me reposer (-20po)"
+    print(pnj1.dialogue[0], "\n1 - J'aimerai prendre une chambre pour me reposer (-20po)"
                    "\n2 - Une pinte Tavernier ! (-10po)")
     if not pnj3 in lieu1.occupant:
         print("3 - Des nouvelles du fermier ?")
@@ -87,8 +87,8 @@ def menu_tavernier():
 
 def menu_shop():
     print(pnj2.dialogue[0], "\n1 - Acheter un item (actuellement indisponible la crise tout ça tout ça)"
-                            "\n2 - Vendre un item"
-                            "\n3- \"e\" pour quitter Shop")
+                            "\n2 - Vendre un item\n"
+                            "\n\"e\" pour quitter Shop")
 
 #################################################################################
 #                                   fonction combat                             #

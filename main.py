@@ -116,31 +116,38 @@ while heros.Vivant():
                     # Tavernier
                     if choix_pnj == "1":
                         clear()
-                        input("Vous saluez le", pnj1.nom)
+                        print("Vous saluez le", pnj1.nom)
+                        input()
                         continuer = True
                         while continuer:
+                            clear()
                             menu_tavernier()
                             dialogue = input()
                             if dialogue == "1":
                                 if heros.gold >= 20:
-                                    input(pnj3.dialogue[1])
+                                    clear()
+                                    input(pnj1.dialogue[1])
                                     heros.gold -= 20
                                     input("Vous payez 20po votre chambre et passez une bonne nuit de sommeil !")
                                     heros.current_hp = heros.hp
                                 else:
-                                    input(pnj3.dialogue[3])
+                                    clear()
+                                    input(pnj1.dialogue[3])
 
                             elif dialogue == "2":
                                 if heros.gold >= 10:
-                                    input(pnj3.dialogue[2])
+                                    clear()
+                                    input(pnj1.dialogue[2])
                                     heros.gold -= 10
                                     heros.current_hp += 10
                                     input("Rien de tel qu'une bonne bière !")
                                 else:
-                                    input(pnj3.dialogue[3])
+                                    clear()
+                                    input(pnj1.dialogue[3])
 
 
                             elif dialogue == "3" and not pnj3 in lieu1.occupant:
+                                clear()
                                 print(pnj1.dialogue[4])
 
                             elif dialogue == "e":
@@ -227,11 +234,11 @@ while heros.Vivant():
                     if choix_shop == "1":
                         acheter = True
                         while acheter:
+                            clear()
                             choix_shop = input("Vous savez pas lire !\n"
                                                "Je n'ai rien a vous vendre pour l'instant...\n"
                                                "\"e\" pour quitter\n")
                             if choix_shop == "e":
-                                input("Vous quittez le Shop")
                                 acheter = False
                     
                     # Vendre
@@ -248,11 +255,12 @@ while heros.Vivant():
                                 for i in heros.inventaire:
                                     j += 1
                                     print(j, "-", i.nom, "prix de vente :", i.gold, "po")
-                                print("\"e\" pour quitter")
+                                print("\n\"e\" pour quitter\n")
                                 select_item = input("Quel item voulez-vous vendre ?\n")
                                 if select_item == "e":
-                                    input("Vous quittez le Shop")
                                     vendre = False
+                                    break
+
                                 while not check_int(select_item):
                                     if select_item == "e":
                                         vendre = False
@@ -273,6 +281,8 @@ while heros.Vivant():
                                 
                     # Quitter
                     elif choix_shop == "e":
+                        clear()
+                        input("Vous quittez le Shop")
                         shop = False
 
             # Guilde
@@ -304,6 +314,8 @@ while heros.Vivant():
 
                         # Quitter Guilde     
                         elif choix_pnj == "e":
+                            clear()
+                            input("Vous quittez la Guilde")
                             continuer = False
                         
             

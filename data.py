@@ -88,9 +88,9 @@ boss1 = Boss("Le Roi gobelin", 200, 50, 100, [tete4, torse4, jambe4, pied4, gant
 ##################################################################
 
 # Description quete
-description1 = "Récemment, les sangliers de la région nous empêche de semer pour les futures récoltes.\nIls sont trop nombreux, si vous pouviez y remédier je vous en serai reconnaissant.\nRamenez-moi la preuve que vous vous êtes débarassé de 5 de ces bestiaux et je vous récompenserai."
-description2 = "Les gobelins sont à nos portes. \nAventurier, vous semblez apte à faire disparaître cette vermine. \nApportez moi la preuve de 5 gobelin tué et la ville vous récompensera !"
-description3 = "Les cadavres s'ammoncèlent. \nOn nous signale la présence d'un orc rodant dans les environ. \nDébarrassez-nous en, vous serez grandement récompensé"
+description1 = "Pour tout vous dire, récemment les sangliers de la région nous empêchent de semer pour les futures récoltes.\nIls sont trop nombreux, si vous pouviez y remédier je vous en serai reconnaissant.\nRamenez-moi la preuve que vous vous êtes débarassé de 5 de ces bestiaux et je vous récompenserai.\n"
+description2 = "Les gobelins sont à nos portes. \nAventurier, vous semblez apte à faire disparaître cette vermine. \nApportez moi la preuve de 5 gobelin tué et la ville vous récompensera !\n"
+description3 = "Les cadavres s'ammoncèlent... \nOn nous signale la présence d'un orc rodant dans les environ. \nDébarrassez-nous en, vous serez grandement récompensé !\n"
 
 # Quete (self, nom, description, xp, gold, monstre, combien)
 quete1 = Quete("Un risque à écarter", description1, 100, 100, monstre1, 5)
@@ -108,14 +108,14 @@ liste_map = [map1, map2, map3]
 ###################################################################
 
 # Dialogue pnj
-dialogue1 = ["Il cherche à s'rincer le gosier le voyageur ?\En quoi je peux vous être utile ?",
-                "Pas de souci voyageur je vous prépare ça fisa !", "Et une pinte pour le voyageur !",
-                "Désolé, la maison ne fait pas crédit !",
+dialogue1 = ["Il cherche à s'rincer le gosier le voyageur ?\nEn quoi je peux vous être utile ?\n",
+                "Pas de souci voyageur je vous prépare ça fisa !\n", "Et une pinte pour le voyageur !\n",
+                "Désolé, la maison ne fait pas crédit !\n",
                 "C'était un très bon client...\nIl n'a pas survécu, il a malheureusement croisé la route d'une troupe de gobelin ou d'un orc je ne me souviens plus trop.\nLe pauvre n'a pas survécu..."]
 dialogue2 = ["Bonjour aventurier, montrez moi vos trouvailles on pourra peut-être faire affaire !"]
-dialogue3 = ["Bonjour...", "Effectivement, ça va pas très fort en ce moment...",
-                "Des gobelin ?! J'avais déjà le moral à zéro mais là vous m'achevez ! Va voir ailleurs si j'y suis !",
-                "Merci l'ami !", "Passez une bonne journée..."]
+dialogue3 = ["\nBonjour...\n", "\nEffectivement, ça va pas très fort en ce moment...\n",
+                "\nDes gobelin ?! J'avais déjà le moral à zéro mais là vous m'achevez ! Va voir ailleurs si j'y suis !\n",
+                "\nMerci l'ami !\n", "\nPassez une bonne journée...\n"]
 dialogue4 = []
 
 # Pnj (self, nom, position)
