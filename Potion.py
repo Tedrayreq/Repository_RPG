@@ -11,6 +11,9 @@ class Potion(Objet):
 
     def Utiliser(self, personnage):
         personnage.current_hp += self.hp
+        if personnage.curent_hp > personnage.hp:
+            personnage.current_hp = personnage.hp
+        personnage.inventaire.remove(self)
         print("Vous utilisez une", self.nom, ", vous récupérez", self.heal, "hp")
 
     def Ranger(self, personnage):

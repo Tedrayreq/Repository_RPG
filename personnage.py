@@ -71,11 +71,14 @@ class Personnage:
     def Perdre_objet(self,objet):
         self.inventaire.remove(objet)
 
+    
+    def Afficher_gold(self):
+        print("Vous avez actuellement :", self.gold, "pièces d'or\n")
 
+    
     def Afficher_inventaire(self):
-        print("Vous avez actuellement :", self.gold, "pièces d'or")
         if len(self.inventaire) == 0:
-            print("L'inventaire est vide")
+            print("L'inventaire est vide\n")
         else:
             for i in self.inventaire:
                 print(i.nom)
@@ -83,7 +86,7 @@ class Personnage:
 
     def Afficher_equiper(self):
         if len(self.equiper) == 0:
-            print("Vous n'avez rien d'équipé")
+            print("Vous n'avez rien d'équipé\n")
         else:
             for i in self.equiper:
                 print(i.nom)
@@ -135,9 +138,9 @@ class Personnage:
 
     def Afficher_stats(self):
         print(self.pseudo, "de niv:", self.niv)
-        print("HP:", self.current_hp, "/", self.hp)
-        print("xp:", self.xp, "/", (self.niv*100))
-        print("force", self.force)
+        print("\nHP:", self.current_hp, "/", self.hp)
+        print("\nxp:", self.xp, "/", (self.niv*100))
+        print("\nforce", self.force)
 
 
     def Vivant(self):

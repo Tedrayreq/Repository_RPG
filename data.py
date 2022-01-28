@@ -108,9 +108,14 @@ liste_map = [map1, map2, map3]
 ###################################################################
 
 # Dialogue pnj
-dialogue1 = ["Il cherche à s'rincer le gosier le voyageur ?\En quoi je peux vous être utile ?", "Pas de souci voyageur je vous prépare ça fisa !", "Et une pinte pour le voyageur !", "Désolé, la maison ne fait pas crédit !", "C'était un très bon client...\nIl n'a pas survécu, il a malheureusement croisé la route d'une troupe de gobelin ou d'un orc je ne me souviens plus trop.\nLe pauvre n'a pas survécu..."]
+dialogue1 = ["Il cherche à s'rincer le gosier le voyageur ?\En quoi je peux vous être utile ?",
+                "Pas de souci voyageur je vous prépare ça fisa !", "Et une pinte pour le voyageur !",
+                "Désolé, la maison ne fait pas crédit !",
+                "C'était un très bon client...\nIl n'a pas survécu, il a malheureusement croisé la route d'une troupe de gobelin ou d'un orc je ne me souviens plus trop.\nLe pauvre n'a pas survécu..."]
 dialogue2 = ["Bonjour aventurier, montrez moi vos trouvailles on pourra peut-être faire affaire !"]
-dialogue3 = ["Bonjour...", "Effectivement, ça va pas très fort en ce moment...", "Des gobelin ?! J'avais déjà le moral à zéro mais là vous m'achevez ! Va voir ailleurs si j'y suis !", "Merci l'ami !", "Passez une bonne journée..."]
+dialogue3 = ["Bonjour...", "Effectivement, ça va pas très fort en ce moment...",
+                "Des gobelin ?! J'avais déjà le moral à zéro mais là vous m'achevez ! Va voir ailleurs si j'y suis !",
+                "Merci l'ami !", "Passez une bonne journée..."]
 dialogue4 = []
 
 # Pnj (self, nom, position)

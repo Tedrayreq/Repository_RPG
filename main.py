@@ -64,6 +64,7 @@ while heros.Vivant():
     # Afficher stats
     elif choix == "2":
         clear()
+        print("STATS\n")
         heros.Afficher_stats()
         input("\nentrer pour exit")
 
@@ -76,6 +77,7 @@ while heros.Vivant():
     # Afficher inventaire
     elif choix == "4":
         clear()
+        heros.Afficher_gold()
         print("INVENTAIRE\n")
         heros.Afficher_inventaire()
         print("\nACTUELLEMENT EQUIPE\n")
@@ -265,8 +267,6 @@ while heros.Vivant():
                                     input("Item vendu !")
 
                                 
-
-
                     # Quitter
                     elif choix_shop == "e":
                         shop = False
