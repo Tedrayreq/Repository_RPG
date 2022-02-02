@@ -1,9 +1,4 @@
 from profession import *
-from objet import *
-from monstre import *
-from quete import *
-from Potion import *
-from data import *
 
 class Personnage:
     def __init__(self, pseudo):

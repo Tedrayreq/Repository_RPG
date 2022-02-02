@@ -10,6 +10,7 @@ from boss import *
 from pnj import *
 from ville import *
 from lieu import *
+from Combat import *
 from functions import *
 
 # Création héros
@@ -46,13 +47,8 @@ while heros.Vivant():
             elif rand_monstre == 10:
                 monstre = monstre3
 
-            # Alea niv monstre
-            rand_niv_monstre = randint(heros.position.niv_min, heros.position.niv_max)
-            monstre.niv = rand_niv_monstre
-            monstre.hp += monstre.niv*10
-            monstre.current_hp = monstre.hp
-            monstre.force += monstre.niv*2
-            combat(heros, monstre)
+            instance_combat = Combat(heros, monstre)
+            instance_combat.Start_combat()
         
             if heros.Vivant():
                 continuer = input("Continuer ? \"n\" pour arrêter\n")
