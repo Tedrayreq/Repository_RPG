@@ -1,6 +1,15 @@
 from personnage import *
 from profession import *
 from objet import *
+from Stuff import *
+from Arme import *
+from Tete import *
+from Torse import *
+from Jambiere import *
+from Pied import *
+from Gant import *
+from Epaule import *
+from Ceinture import *
 from Potion import *
 from monstre import *
 from quete import *
@@ -21,53 +30,53 @@ artisan = Profession("artisan", 0, 10)
 
 # Objet (self, nom, type, dgts, heal, gold)
     # armes
-arme1 = Objet("épée rouillée", 10, 0, 0, 10)
-arme2 = Objet("épée solide", 20, 0, 0, 20)
-arme3 = Objet("épée tranchante", 30, 0, 0, 30)
-arme4 = Objet("épee qui-en-jette", 50, 0, 0, 50)
+arme1 = Arme("épée rouillée", 10, 0, 0, 10)
+arme2 = Arme("épée solide", 20, 0, 0, 20)
+arme3 = Arme("épée tranchante", 30, 0, 0, 30)
+arme4 = Arme("épee qui-en-jette", 50, 0, 0, 50)
 
     # armures
         # tête
-tete1 = Objet("chapeau de paille", 0, 10, 0, 10)
-tete2 = Objet("bonnet en cuir", 0, 20, 0, 20)
-tete3 = Objet("heaume", 0, 30, 0, 30)
-tete4 = Objet("heaume enchanté", 0, 50, 0, 50)
+tete1 = Tete("chapeau de paille", 0, 10, 0, 10)
+tete2 = Tete("bonnet en cuir", 0, 20, 0, 20)
+tete3 = Tete("heaume", 0, 30, 0, 30)
+tete4 = Tete("heaume enchanté", 0, 50, 0, 50)
 
         # torse
-torse1 = Objet("gilet de fortune", 0, 10, 0, 10)
-torse2 = Objet("armure de cuir", 0, 20, 0, 20)
-torse3 = Objet("armure en plaque", 0, 30, 0, 30)
-torse4 = Objet("armure en plaque enchantée", 0, 50, 0, 50)
+torse1 = Torse("gilet de fortune", 0, 10, 0, 10)
+torse2 = Torse("armure de cuir", 0, 20, 0, 20)
+torse3 = Torse("armure en plaque", 0, 30, 0, 30)
+torse4 = Torse("armure en plaque enchantée", 0, 50, 0, 50)
 
         # jambe
-jambe1 = Objet("pantalon déchiré", 0, 10, 0, 10)
-jambe2 = Objet("jambière en cuir", 0, 20, 0, 20)
-jambe3 = Objet("jambière en plaque", 0, 30, 0, 30)
-jambe4 = Objet("jambière en plaque enchantée", 0, 50, 0, 50)
+jambe1 = Jambiere("pantalon déchiré", 0, 10, 0, 10)
+jambe2 = Jambiere("jambière en cuir", 0, 20, 0, 20)
+jambe3 = Jambiere("jambière en plaque", 0, 30, 0, 30)
+jambe4 = Jambiere("jambière en plaque enchantée", 0, 50, 0, 50)
 
         # pied
-pied1 = Objet("simple botines", 0, 10, 0, 10)
-pied2 = Objet("bottes en cuir", 0, 20, 0, 20)
-pied3 = Objet("bottes lourdes", 0, 30, 0, 30)
-pied4 = Objet("bottes en plaque enchantées", 0, 50, 0, 50)
+pied1 = Pied("simple botines", 0, 10, 0, 10)
+pied2 = Pied("bottes en cuir", 0, 20, 0, 20)
+pied3 = Pied("bottes lourdes", 0, 30, 0, 30)
+pied4 = Pied("bottes en plaque enchantées", 0, 50, 0, 50)
 
         # main
-gant1 = Objet("mitaines", 0, 10, 0, 10)
-gant2 = Objet("gants en cuir", 0, 20, 0, 20)
-gant3 = Objet("gants en plaque", 0, 30, 0, 30)
-gant4 = Objet("gants en plaque enchantés", 0, 50, 0, 50)
+gant1 = Gant("mitaines", 0, 10, 0, 10)
+gant2 = Gant("gants en cuir", 0, 20, 0, 20)
+gant3 = Gant("gants en plaque", 0, 30, 0, 30)
+gant4 = Gant("gants en plaque enchantés", 0, 50, 0, 50)
 
         # epaule
-epaule1 = Objet("epaules de tissu", 0, 10, 0, 10)
-epaule2 = Objet("épaule en cuir", 0, 20, 0, 20)
-epaule3 = Objet("épaule en plaque", 0, 30, 0, 30)
-epaule4 = Objet("épaule en plaque enchanté", 0, 50, 0, 50)
+epaule1 = Epaule("epaules de tissu", 0, 10, 0, 10)
+epaule2 = Epaule("épaule en cuir", 0, 20, 0, 20)
+epaule3 = Epaule("épaule en plaque", 0, 30, 0, 30)
+epaule4 = Epaule("épaule en plaque enchanté", 0, 50, 0, 50)
 
         # ceinture
-ceinture1 = Objet("ceinture simple", 0, 10, 0, 10)
-ceinture2 = Objet("ceinture en cuir", 0, 20, 0, 20)
-ceinture3 = Objet("ceinture en plaque", 0, 30, 0, 30)
-ceinture4 = Objet("ceinture en plaque enchanté", 0, 50, 0, 50)
+ceinture1 = Ceinture("ceinture simple", 0, 10, 0, 10)
+ceinture2 = Ceinture("ceinture en cuir", 0, 20, 0, 20)
+ceinture3 = Ceinture("ceinture en plaque", 0, 30, 0, 30)
+ceinture4 = Ceinture("ceinture en plaque enchanté", 0, 50, 0, 50)
 
     #potions
 potion1 = Potion("potion de soin de base", 0, 0, 20, 20)

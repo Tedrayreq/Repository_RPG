@@ -3,6 +3,15 @@ from random import randint
 from personnage import *
 from profession import *
 from objet import *
+from Stuff import *
+from Arme import *
+from Tete import *
+from Torse import *
+from Jambiere import *
+from Pied import *
+from Gant import *
+from Epaule import *
+from Ceinture import *
 from monstre import *
 from quete import *
 from map import *
@@ -19,8 +28,10 @@ print("Bon courage", pseudo, "\n")
 heros = Personnage(pseudo)
 heros.position = map1
 heros.quetes = [quete1, quete2, quete3]
-heros.Gagner_objet(arme1)
-heros.Equiper_objet(arme1)
+#heros.Gagner_objet(arme1)
+arme1.Looter(heros)
+#heros.Equiper_objet(arme1)
+arme1.Equiper(heros)
 heros.gold = 100
 input("Appuyer sur entrer pour continuer\n")
 
@@ -73,13 +84,36 @@ while heros.Vivant():
     # Afficher inventaire
     elif choix == "4":
         clear()
-        heros.Afficher_gold()
-        print("INVENTAIRE\n")
-        heros.Afficher_inventaire()
-        print("\nACTUELLEMENT EQUIPE\n")
-        heros.Afficher_equiper()
-        #sous_menu_inventaire(personnage, choix)
-        input("\nentrer pour exit")
+        inventaire = True
+        while inventaire:
+            heros.Afficher_gold()
+            print("Que voulez-vous consultez ?\n"
+                  "1 - Sac\n"
+                  "2 - Stuff équipé\n"
+                  "3 - \"e\" pour exit")
+            choix_inventaire = input("> ")
+            if choix_inventaire == "1":
+                print("Sac")
+                input()
+            
+            elif choix_inventaire == "2":
+                print("Stuff équipé")
+                j = 0
+                for cle, valeur in heros.stuff.items():
+                    j += 1
+                    if len(valeur) == 0:
+                        print(j, "-", cle, ":", "vide")
+                    else:
+                        print(j, "-", cle, ":", valeur[0].nom, "force :", valeur[0].dgts, "hp :", valeur[0].hp)
+                input()
+            
+            elif choix_inventaire == "e":
+                inventaire = False
+            # heros.Afficher_inventaire()
+            #print("ACTUELLEMENT EQUIPE\n")
+            #heros.Afficher_equiper()
+            #sous_menu_inventaire(personnage, choix)
+            #input("\nentrer pour exit")
 
     # Ville
     elif choix == "5":
@@ -167,7 +201,8 @@ while heros.Vivant():
                                       "Les gobelins ou l'orc qui rodaient aux alentours dont vous vous êtes occupé m'auraient tué !\n"
                                       "Vous êtes un vrai héros"
                                       "Ce n'est pas grand chose, mais prenez ceci en plus de la récompense de quête, j'insiste !")
-                                heros.Gagner_objet(arme4)
+                                #heros.Gagner_objet(arme4)
+                                arme4.Looter(heros)
                                 input("Vous obtenez l'épée-qui-en-jette !\n"
                                       "Prendre le temps de bien faire les choses est la meilleure des voies !")
                                 heros.quetes[0].Rendre_quete()

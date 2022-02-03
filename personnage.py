@@ -10,29 +10,44 @@ class Personnage:
         self.niv = 1
         self.force = 20
         self.inventaire = []
-        self.new_inventaire = {"items": [], "potion":[], "arme":[], "tête": [], "épaules": [], 
-                               "torse": [], "gants": [], "jambières": [], "pieds": []}
-        self.stuff = {"arme": [], "tête": [], "épaules": [], "torse": [], "gants": [], 
-                      "jambières": [], "pieds": []}
+        self.new_inventaire = {"Items": [], "Potions":[], "Armes":[], "Têtes": [], "Epaules": [], 
+                               "Torse": [], "Gants": [], "Jambières": [], "Pieds": [], "Ceintures": []}
+        self.stuff = {"Armes": [], "Têtes": [], "Epaules": [], "Torses": [], "Gants": [], 
+                      "Jambières": [], "Pieds": [], "Ceinture": []}
         self.equiper = []
         self.vivant = True
         self.position = ""
         self.quetes = []
         self.gold = 0
     
-
-    def Equiper_objet(self, objet):
-        self.equiper.append(objet)
-        self.inventaire.remove(objet)
+    def Gain_stats_objet(self, objet):
         self.force += objet.dgts
         self.hp += objet.hp
 
-
-    def Ranger_objet(self, objet):
-        self.inventaire.append(objet)
-        self.equiper.remove(objet)
+    def Perte_stats_objet(self, objet):
         self.force -= objet.dgts
         self.hp -= objet.hp
+
+
+    # def Equiper_objet(self, objet):
+    #     self.equiper.append(objet)
+    #     self.inventaire.remove(objet)
+    #     self.force += objet.dgts
+    #     self.hp += objet.hp
+
+
+    # def Ranger_objet(self, objet):
+    #     self.inventaire.append(objet)
+    #     self.equiper.remove(objet)
+    #     self.force -= objet.dgts
+    #     self.hp -= objet.hp
+
+    # def Gagner_objet(self, objet):
+    #     self.inventaire.append(objet)
+
+
+    # def Perdre_objet(self,objet):
+    #     self.inventaire.remove(objet)
 
 
     def Choix_profession(self, profession):
@@ -59,14 +74,6 @@ class Personnage:
             print("--------------------")
 
 
-    def Gagner_objet(self, objet):
-        self.inventaire.append(objet)
-
-
-    def Perdre_objet(self,objet):
-        self.inventaire.remove(objet)
-
-    
     def Afficher_gold(self):
         print("Vous avez actuellement :", self.gold, "pièces d'or\n")
 
@@ -132,9 +139,8 @@ class Personnage:
     
 
     def Afficher_stats(self):
-        print(self.pseudo, "de niv:", self.niv)
-        print("\nHP:", self.current_hp, "/", self.hp)
-        print("\nxp:", self.xp, "/", (self.niv*100))
+        print(self.pseudo, "de niv:", self.niv, "               ","HP:", self.current_hp, "/", self.hp)
+        print("xp:", self.xp, "/", (self.niv*100))
         print("\nforce", self.force)
 
 
