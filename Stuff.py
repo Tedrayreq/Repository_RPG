@@ -24,7 +24,7 @@ class Stuff(Objet):
             input()
         else:
             print("Vous avez déjà", personnage.stuff[self.type_item][0].nom,"d'équipé")
-            check = input("Voulez-vous le remplacer ? y/n")
+            check = input("Voulez-vous le remplacer ? y/n\n> ")
             if check == "y":
                 ancien = personnage.stuff[self.type_item][0]
                 ancien.Ranger(personnage)

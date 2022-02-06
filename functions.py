@@ -45,7 +45,7 @@ def clear():
 # Class compétence non ajouté et non liée à class personnage
 # Objet actuellement utilisables : class Potion
 # Fuite impossible contre class Boss
-# Prévoir boost chance de réussir fuite si niv perso < monstre
+# Prévoir boost chance de réussir fuite si niv perso < monstre ou si bonus evasion (bonus exclusif sur Pieds)
 def menu_combat(personnage, monstre):
     clear()
     print("Vos PV :", personnage.current_hp, "              ", monstre.name, "PV restant :", monstre.current_hp)

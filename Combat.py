@@ -1,5 +1,7 @@
 from random import randint
 
+from functions import check_int
+
 class Combat():
     def __init__(self, personnage, monstre):
         self.personnage = personnage
@@ -29,6 +31,17 @@ class Combat():
               "2 - Utiliser une compétence\n"
               "3 - Utiliser objet\n"
               "4 - Tenter de fuir")
+
+    def check_int(self, data):
+        continuer = False
+        try:
+            data = int(data)
+        except ValueError:
+            print("Entrée incorrecte, veuillez rentrez un nombre")
+        else:
+            continuer = True
+        finally:
+            return continuer
 
     def Over(self):
         if not self.personnage.Vivant() or not self.monstre.Vivant() or self.fuite:
@@ -130,11 +143,11 @@ class Combat():
                     j += 1
                     print(j, " - ", i.nom, "soin :", i.heal)
                 choix_potion = input("> ")
-                choix_potion = int(choix_potion)
-                if choix_potion <= len(self.personnage.new_inventaire["Potions"]):
-                    self.personnage.new_inventaire["Potions"][choix_potion-1].Utiliser(self.personnage)
-                    self.tour += 1
-            
+                if check_int(choix_potion):
+                    choix_potion = int(choix_potion)
+                    if choix_potion <= len(self.personnage.new_inventaire["Potions"]):
+                        self.personnage.new_inventaire["Potions"][choix_potion-1].Utiliser(self.personnage)
+                        self.tour += 1
 
         # Tenter de fuir
         elif choix_menu == "4":
