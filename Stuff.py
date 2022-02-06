@@ -28,9 +28,6 @@ class Stuff(Objet):
             if check == "y":
                 ancien = personnage.stuff[self.type_item][0]
                 ancien.Ranger(personnage)
-                # personnage.stuff[self.type_item].remove(ancien)
-                # personnage.Perte_stats_objet(ancien)
-                # personnage.new_inventaire[ancien.type_item].append(ancien)
                 personnage.stuff[self.type_item].append(self)
                 personnage.new_inventaire[self.type_item].remove(self)
                 personnage.Gain_stats_objet(self)

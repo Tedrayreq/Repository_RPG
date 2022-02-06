@@ -12,9 +12,9 @@ class Potion(Objet):
 
     def Utiliser(self, personnage):
         personnage.current_hp += self.hp
-        if personnage.curent_hp > personnage.hp:
+        if personnage.current_hp > personnage.hp:
             personnage.current_hp = personnage.hp
-        personnage.inventaire.remove(self)
+        personnage.new_inventaire["Potions"].remove(self)
         print("Vous utilisez une", self.nom, ", vous récupérez", self.heal, "hp")
 
     # à supprimer si check hérédité de class objet good

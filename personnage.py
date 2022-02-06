@@ -11,9 +11,9 @@ class Personnage:
         self.force = 20
         self.inventaire = []
         self.new_inventaire = {"Items": [], "Potions":[], "Armes":[], "Têtes": [], "Epaules": [], 
-                               "Torse": [], "Gants": [], "Jambières": [], "Pieds": [], "Ceintures": []}
+                               "Torses": [], "Gants": [], "Jambières": [], "Pieds": [], "Ceintures": []}
         self.stuff = {"Armes": [], "Têtes": [], "Epaules": [], "Torses": [], "Gants": [], 
-                      "Jambières": [], "Pieds": [], "Ceinture": []}
+                      "Jambières": [], "Pieds": [], "Ceintures": []}
         self.equiper = []
         self.vivant = True
         self.position = ""

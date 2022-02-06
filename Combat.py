@@ -110,16 +110,33 @@ class Combat():
         self.clear()
         self.menu_combat()
         choix_menu = input("> ")
+        # Attaquer
         if choix_menu == "1":
             self.Dgt_attaque_personnage()
             input()
-
+        # Utiliser une compétence
         elif choix_menu == "2":
             input("Pas encore dispo deso pas deso xP")
         
+        # Utiliser objet
         elif choix_menu == "3":
-            input("pas encore config deso pas deso")
+            self.clear()
+            if len(self.personnage.new_inventaire["Potions"]) == 0:
+                input("Vous n'avez pas d'objet utilisable")
+            else:
+                print("Quel item souhaitez-vous utiliser ?\n")
+                j = 0
+                for i in self.personnage.new_inventaire["Potions"]:
+                    j += 1
+                    print(j, " - ", i.nom, "soin :", i.heal)
+                choix_potion = input("> ")
+                choix_potion = int(choix_potion)
+                if choix_potion <= len(self.personnage.new_inventaire["Potions"]):
+                    self.personnage.new_inventaire["Potions"][choix_potion-1].Utiliser(self.personnage)
+                    self.tour += 1
+            
 
+        # Tenter de fuir
         elif choix_menu == "4":
             fuite = randint(1, 100)
             if fuite > 70:

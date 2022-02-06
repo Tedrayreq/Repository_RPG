@@ -86,17 +86,34 @@ while heros.Vivant():
         clear()
         inventaire = True
         while inventaire:
+            clear()
             heros.Afficher_gold()
             print("Que voulez-vous consultez ?\n"
                   "1 - Sac\n"
                   "2 - Stuff équipé\n"
                   "3 - \"e\" pour exit")
             choix_inventaire = input("> ")
+
+            #Sac
             if choix_inventaire == "1":
+                clear()
                 print("Sac")
-                input()
+                if len(heros.new_inventaire["Items"]) + len(heros.new_inventaire["Potions"]) + len(heros.new_inventaire["Armes"]) + len(heros.new_inventaire["Têtes"]) + len(heros.new_inventaire["Epaules"]) + len(heros.new_inventaire["Torses"]) + len(heros.new_inventaire["Gants"]) + len(heros.new_inventaire["Jambières"]) + len(heros.new_inventaire["Pieds"]) + len(heros.new_inventaire["Ceintures"]) == 0:
+                    input("Votre sac est vide")
+                else:
+                    k = 0
+                    for i in heros.new_inventaire:
+                        print("\n" + i)
+                        if len(heros.new_inventaire[i]) == 0:
+                            print("vide")
+                        else:
+                            for j in heros.new_inventaire[i]:
+                                print(j.nom)
+                    input()
             
+            # Stuff
             elif choix_inventaire == "2":
+                clear()
                 print("Stuff équipé")
                 j = 0
                 for cle, valeur in heros.stuff.items():
@@ -105,7 +122,193 @@ while heros.Vivant():
                         print(j, "-", cle, ":", "vide")
                     else:
                         print(j, "-", cle, ":", valeur[0].nom, "force :", valeur[0].dgts, "hp :", valeur[0].hp)
-                input()
+                print("Voulez-vous équiper un item ? y")
+                choix_equiper = input("> ")
+                if choix_equiper == "y":
+                    equiper_mode = True
+                    while equiper_mode:
+                        clear()
+                        print("Sur quel emplacement désirez-vous équiper un items ?\n"
+                              "1 - Armes\n"
+                              "2 - Têtes\n"
+                              "3 - Epaules\n"
+                              "4 - Torses\n"
+                              "5 - Gants\n"
+                              "6 - Jambières\n"
+                              "7 - Pieds\n"
+                              "8 - Ceintures\n"
+                              "\"e\" pour exit")
+                        choix_emplacement = input("> ")
+                        if choix_emplacement == "e":
+                            equiper_mode = False
+                        
+                        # Armes
+                        elif choix_emplacement == "1":
+                            clear()
+                            print("Emplacement Armes")
+                            if len(heros.stuff["Armes"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Armes"][0].nom, "force :", heros.stuff["Armes"][0].dgts, "hp :", heros.stuff["Armes"][0].hp)
+                            if len(heros.new_inventaire["Armes"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Armes"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Armes"][choix_arme-1].Equiper(heros)
+                        
+                        # Têtes
+                        elif choix_emplacement == "2":
+                            clear()
+                            print("Emplacement Têtes")
+                            if len(heros.stuff["Têtes"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Têtes"][0].nom, "force :", heros.stuff["Têtes"][0].dgts, "hp :", heros.stuff["Têtes"][0].hp)
+                            if len(heros.new_inventaire["Têtes"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Têtes"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Têtes"][choix_arme-1].Equiper(heros)
+
+                        # Epaules
+                        elif choix_emplacement == "3":
+                            clear()
+                            print("Emplacement Epaules")
+                            if len(heros.stuff["Epaules"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Epaules"][0].nom, "force :", heros.stuff["Epaules"][0].dgts, "hp :", heros.stuff["Epaules"][0].hp)
+                            if len(heros.new_inventaire["Epaules"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Epaules"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Epaules"][choix_arme-1].Equiper(heros)
+
+                        # Torses
+                        elif choix_emplacement == "4":
+                            clear()
+                            print("Emplacement Torses")
+                            if len(heros.stuff["Torses"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Torses"][0].nom, "force :", heros.stuff["Torses"][0].dgts, "hp :", heros.stuff["Torses"][0].hp)
+                            if len(heros.new_inventaire["Torses"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Torses"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Torses"][choix_arme-1].Equiper(heros)
+
+                        # Gants
+                        elif choix_emplacement == "5":
+                            clear()
+                            print("Emplacement Gants")
+                            if len(heros.stuff["Gants"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Gants"][0].nom, "force :", heros.stuff["Gants"][0].dgts, "hp :", heros.stuff["Gants"][0].hp)
+                            if len(heros.new_inventaire["Gants"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Gants"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Gants"][choix_arme-1].Equiper(heros)
+
+                        # Jambières
+                        elif choix_emplacement == "6":
+                            clear()
+                            print("Emplacement Jambières")
+                            if len(heros.stuff["Jambières"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Jambières"][0].nom, "force :", heros.stuff["Jambières"][0].dgts, "hp :", heros.stuff["Jambières"][0].hp)
+                            if len(heros.new_inventaire["Jambières"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Jambières"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Jambières"][choix_arme-1].Equiper(heros)
+
+                        # Pieds
+                        elif choix_emplacement == "7":
+                            clear()
+                            print("Emplacement Pieds")
+                            if len(heros.stuff["Pieds"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Pieds"][0].nom, "force :", heros.stuff["Pieds"][0].dgts, "hp :", heros.stuff["Pieds"][0].hp)
+                            if len(heros.new_inventaire["Pieds"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Pieds"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Pieds"][choix_arme-1].Equiper(heros)
+
+                        # Ceintures
+                        elif choix_emplacement == "8":
+                            clear()
+                            print("Emplacement Ceintures")
+                            if len(heros.stuff["Ceintures"]) == 0:
+                                print("Actuellement rien d'équipé")
+                            else:
+                                print("Actuellement équipé :", heros.stuff["Ceintures"][0].nom, "force :", heros.stuff["Ceintures"][0].dgts, "hp :", heros.stuff["Ceintures"][0].hp)
+                            if len(heros.new_inventaire["Ceintures"]) == 0:
+                                input("Vous n'avez rien d'équipable pour cet emplacement")
+                            else:
+                                print("Objet équipable :")
+                                j = 0
+                                for i in heros.new_inventaire["Ceintures"]:
+                                    j += 1
+                                    print(j, " - ", i.nom, "force :", i.dgts, "hp :", i.hp)
+                                print("Quel item voulez-vous équiper ?")
+                                choix_arme = input("> ")
+                                choix_arme = int(choix_arme)
+                                heros.new_inventaire["Ceintures"][choix_arme-1].Equiper(heros)
             
             elif choix_inventaire == "e":
                 inventaire = False
