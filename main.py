@@ -334,9 +334,11 @@ while heros.Vivant():
                                     else:
                                         print("Quel item voulez-vous équiper ? \"e\" pour exit")
                                         choix_arme = input("> ")
-                                if choix_arme <= len(heros.new_inventaire["Ceintures"]):
+                                
+                                if check_int(choix_arme):
                                     choix_arme = int(choix_arme)
-                                    heros.new_inventaire["Ceintures"][choix_arme-1].Equiper(heros)
+                                    if choix_arme <= len(heros.new_inventaire["Ceintures"]):
+                                        heros.new_inventaire["Ceintures"][choix_arme-1].Equiper(heros)
             
             elif choix_inventaire == "e":
                 inventaire = False
