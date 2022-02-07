@@ -431,20 +431,20 @@ while heros.Vivant():
                                 arme4.Looter(heros)
                                 input("Vous obtenez l'épée-qui-en-jette !\n"
                                       "Prendre le temps de bien faire les choses est la meilleure des voies !")
-                                heros.quetes[0].Rendre_quete()
+                                heros.Rendre_quete(heros.quetes[0])
 
                         elif heros.quetes[0].done and not heros.quetes[0].rendue and heros.quetes[1].rendue and not heros.quetes[2].rendue:
                             # Le pnj est voué à mourir si la quête est rendue
                             if heros.quetes[0].Kill():
                                 input("Merci, pour ces sangliers et les gobelins, je vais pouvoir retourner travailler dans mes champs !")
-                                heros.quetes[0].Rendre_quete()    
+                                heros.Rendre_quete(heros.quetes[0])    
                                 lieu1.occupant.remove(pnj3)
 
                         elif heros.quetes[0].done and not heros.quetes[0].rendue and not heros.quetes[1].rendue and not heros.quetes[2].rendue:
                             # Le pnj est voué à mourir si la quête est rendue
                             if heros.quetes[0].Kill():
                                 input("Merci de m'avoir débarassé de ces fichus sangliers ! Je retourne à mes champs !")
-                                heros.quetes[0].Rendre_quete()
+                                heros.Rendre_quete(heros.quetes[0])
                                 lieu1.occupant.remove(pnj3)
 
                         elif heros.quetes[0].active and not heros.quetes[0].done and not heros.quetes[0].rendue and not heros.quetes[1].rendue and not heros.quetes[2].rendue:
@@ -532,6 +532,7 @@ while heros.Vivant():
                         vendre = True
                         while vendre:
                             clear()
+                            heros.inventaire = []
                             for i in heros.new_inventaire["Armes"]:
                                 heros.inventaire.append(i)
                             for i in heros.new_inventaire["Têtes"]:
@@ -578,7 +579,7 @@ while heros.Vivant():
                                 validation = input("> ")
                                 if validation == "y":
                                     clear()
-                                    print("Vous gagnez", heros.inventaire[select_item-1].gold)
+                                    print("Vous gagnez", heros.inventaire[select_item-1].gold, "po")
                                     heros.gold += heros.inventaire[select_item-1].gold
                                     item_vendu = heros.inventaire[select_item - 1]
                                     heros.inventaire.remove(item_vendu)
