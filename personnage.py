@@ -69,9 +69,9 @@ class Personnage:
             self.hp += 10
             self.force += 5
             self.current_hp = self.hp
-            print("--------------------")
+            print("\033[34m--------------------")
             print("Vous gagnez un niv !")
-            print("--------------------")
+            print("--------------------\033[37m")
 
 
     def Afficher_gold(self):
@@ -119,8 +119,9 @@ class Personnage:
             self.Gain_xp(quete.xp)
             self.Level_up()
             self.gold += quete.gold
-            self.quete.rendue = True
-            input("Vous gagnez:\n", self.quetes[0].xp, "xp et", self.quetes[0].gold, "po")
+            quete.rendue = True
+            print("Vous gagnez:\n", self.quetes[0].xp, "xp et", self.quetes[0].gold, "po")
+            input()
 
 
     def Perdre_hp(self, montant):

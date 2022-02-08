@@ -183,7 +183,7 @@ class Combat():
             rand_table_loot = randint(0, (len(self.monstre.table_butin)-1))
             #self.personnage.Gagner_objet(self.monstre.table_butin[rand_table_loot])
             self.monstre.table_butin[rand_table_loot].Looter(self.personnage)
-            print("Vous trouvez :",self.monstre.table_butin[rand_table_loot].nom,"sur le monstre !")
+            print("\nVous trouvez :",self.monstre.table_butin[rand_table_loot].nom,"sur le monstre !")
             for i in self.personnage.quetes:
                 if i.active and not i.done:
                     i.Kill()

@@ -91,7 +91,7 @@ while heros.Vivant():
             print("Que voulez-vous consultez ?\n"
                   "1 - Sac\n"
                   "2 - Stuff équipé\n"
-                  "3 - \"e\" pour exit")
+                  "\n\"e\" pour exit")
             choix_inventaire = input("> ")
 
             #Sac
@@ -108,7 +108,7 @@ while heros.Vivant():
                             print("vide")
                         else:
                             for j in heros.new_inventaire[i]:
-                                print(j.nom)
+                                print(j.nom, "force :", j.dgts, "; hp :", j.hp)
                     input()
             
             # Stuff
@@ -119,7 +119,7 @@ while heros.Vivant():
                 for cle, valeur in heros.stuff.items():
                     j += 1
                     if len(valeur) == 0:
-                        print(j, "-", cle, ":", "vide")
+                        print(j, "-", cle, ":", "\033[31mvide\033[37m")
                     else:
                         print(j, "-", cle, ":", valeur[0].nom, "force :", valeur[0].dgts, "; hp :", valeur[0].hp)
                 print("Voulez-vous équiper un item ? y")
